@@ -1,0 +1,25 @@
+{
+    "name": "audio-rag-support-assistant",
+    "version": "1.0.0",
+    "description": "Audio + RAG support assistant - Full Stack Application",
+    "scripts": {
+        "dev": "npm run dev:frontend",
+        "dev:backend": ".venv-313\\Scripts\\python.exe main.py",
+        "dev:frontend": "cd audio-rag-ui && npm run dev",
+        "dev:all": "concurrently --names \"BACKEND,FRONTEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+        "install:all": "npm install && cd audio-rag-ui && npm install",
+        "build:frontend": "cd audio-rag-ui && npm run build",
+        "start:frontend": "cd audio-rag-ui && npm start"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2"
+    },
+    "keywords": [
+        "ai",
+        "support",
+        "assistant",
+        "rag"
+    ],
+    "author": "",
+    "license": "ISC"
+}

@@ -1,0 +1,168 @@
+/**
+ * Global Animations & Scrollbar Styles
+ * Used across all components for consistency
+ */
+
+/* ============================================ */
+/* SCROLLBAR STYLING (Dark Theme)              */
+/* ============================================ */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5); /* gray-800 semi-transparent */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.7); /* gray-600 */
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.9); /* gray-600 darker on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(75, 85, 99, 0.7) rgba(31, 41, 55, 0.5);
+  /* Smooth transitions for all elements */
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* ============================================ */
+/* CUSTOM ANIMATIONS                           */
+/* ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    color: rgba(239, 68, 68, 1); /* red */
+  }
+  50% {
+    color: rgba(239, 68, 68, 0.6);
+  }
+  100% {
+    color: rgba(239, 68, 68, 1);
+  }
+}
+
+/* Sentiment color pulse (for "Agitated" state) */
+@keyframes sentimentPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+  }
+}
+
+/* ============================================ */
+/* TAILWIND ANIMATION EXTENSIONS               */
+/* ============================================ */
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.3s ease-out;
+}
+
+.animate-color-shift {
+  animation: colorShift 1.5s ease-in-out infinite;
+}
+
+.animate-sentiment-pulse {
+  animation: sentimentPulse 2s infinite;
+}
+
+/* ============================================ */
+/* FOCUS STATES (Accessibility)                */
+/* ============================================ */
+
+input:focus,
+button:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5); /* blue-500 focus ring */
+  outline-offset: 2px;
+}
+
+/* ============================================ */
+/* SMOOTH TRANSITIONS                          */
+/* ============================================ */
+
+button {
+  transition: all 0.2s ease;
+}
+
+/* ============================================ */
+/* CUSTOM TEXT SELECTION                       */
+/* ============================================ */
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.8); /* blue-500 with higher opacity for better contrast */
+  color: #ffffff; /* white text */
+}
+
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.8); /* blue-500 with higher opacity for better contrast */
+  color: #ffffff; /* white text */
+}
